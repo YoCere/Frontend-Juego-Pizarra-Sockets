@@ -1,3 +1,13 @@
 .draw {
   text-align: center;
 }
+
+  
+h2 {
+  font-family: 'Arial', sans-serif; /* O cualquier fuente que prefieras */
+  font-size: 3rem; /* Tamaño adecuado para la fuente */
+  color: rgb(95, 20, 165); /* Color blanco para contrastar con el fondo */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Agrega sombra para mejorar la visibilidad */
+  font-weight: 700;
+ 
+}

@@ -18,7 +18,7 @@ export class RoomComponent implements OnInit {
   }
 
   public saludar():any{
-    // this.socketWebSerice.emitEvent({data: 'Saludo!'})
+    //this.socketWebSerice.emitEvent({data: 'Saludo!'})
   }
 
 }

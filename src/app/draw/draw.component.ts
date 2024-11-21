@@ -29,7 +29,7 @@ export class DrawComponent implements OnInit, AfterViewInit {
   onMouseMove = (e: any) => {
     if (e.target.id === 'canvasId' && (this.isAvailabe)) {
     this.write(e);
-    //console.log(e)
+    console.log(e)
     }
   }
 
@@ -84,9 +84,9 @@ export class DrawComponent implements OnInit, AfterViewInit {
       const currentPost = this.points[this.points.length - 2];
 
       this.drawOnCanvas(prevPost, currentPost);
-     //if (emit) {
-       // this.socketWebService.emitEvent({ prevPost });
-      //}
+     if (emit) {
+       this.socketWebService.emitEvent({ prevPost });
+      }
 
     }
   }

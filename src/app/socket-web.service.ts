@@ -25,7 +25,7 @@ callback: EventEmitter<any> = new EventEmitter();
   }
 
   listen = ()=>{
-    this.ioSocket.on('evento', res=> this.callback.emit(res))
+    this.ioSocket.on('evento', res=> this.outEven.emit(res))
   }
 
   emitEvent = (payload ={}) => {

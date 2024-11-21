@@ -17,7 +17,7 @@ callback: EventEmitter<any> = new EventEmitter();
       url: 'http://localhost:5000',
       options: {
         query: {
-          nameRoom: cookieService.get('room'),
+          nameRoom: cookieService.get('room')
         }
       }
     })

@@ -27,10 +27,10 @@ export class DrawComponent implements OnInit, AfterViewInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove = (e: any) => {
-    console.log(e)
-    // if (e.target.id === 'canvasId' && (this.isAvailabe)) {
-    // this.write(e);
-    // }
+    if (e.target.id === 'canvasId' && (this.isAvailabe)) {
+    this.write(e);
+    //console.log(e)
+    }
   }
 
   @HostListener('click', ['$event'])
@@ -72,7 +72,8 @@ export class DrawComponent implements OnInit, AfterViewInit {
     const prevPos = {
       x: res.clientX - rect.left,
       y: res.clientY - rect.top,
-    }
+    };
+    
     this.writeSingle(prevPos);
   }
 
@@ -83,9 +84,9 @@ export class DrawComponent implements OnInit, AfterViewInit {
       const currentPost = this.points[this.points.length - 2];
 
       this.drawOnCanvas(prevPost, currentPost);
-      if (emit) {
-        this.socketWebService.emitEvent({ prevPost })
-      }
+     //if (emit) {
+       // this.socketWebService.emitEvent({ prevPost });
+      //}
 
     }
   }

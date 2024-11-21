@@ -16,6 +16,8 @@ import { SocketWebService } from '../services/socket-web.service';
 export class DrawComponent implements OnInit, AfterViewInit {
   @ViewChild('canvasRef', { static: false }) canvasRef: ElementRef;
 
+  isAvailable:boolean
+
   public width: number = 500;
   public height: number = 450;
 
@@ -40,8 +42,7 @@ export class DrawComponent implements OnInit, AfterViewInit {
     }
   }
   constructor(
-    private socketWebService: SocketWebService,
-  ) {
+    private socketWebService: SocketWebService,) {
     this.socketWebService.outEven.subscribe(res => {
 
       const { prevPost } = res;
@@ -84,9 +85,9 @@ export class DrawComponent implements OnInit, AfterViewInit {
       const currentPost = this.points[this.points.length - 2];
 
       this.drawOnCanvas(prevPost, currentPost);
-     //if (emit) {
-       // this.socketWebService.emitEvent({ prevPost });
-      //}
+     
+      this.socketWebService.emitEvent({ prevPost });
+   
 
     }
   }

@@ -8,16 +8,17 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit {
-  room: string;
-  constructor(
-    private route: ActivatedRoute,
-    private cookieService: CookieService,
-
-  ) { }
+  room: string
+  constructor(private route: ActivatedRoute,
+              private cookieService: CookieService) { }
 
   ngOnInit(): void {
-    this.room = this.route.snapshot.paramMap.get('room');
+    this.room = this.route.snapshot.paramMap.get('room')
     this.cookieService.set('room', this.room)
+  }
+
+  public saludar():any{
+    // this.socketWebSerice.emitEvent({data: 'Saludo!'})
   }
 
 }
